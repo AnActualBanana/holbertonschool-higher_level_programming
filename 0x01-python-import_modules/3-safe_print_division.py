@@ -4,8 +4,7 @@ def safe_print_division(a, b):
         quotient = a / b
     except:
         quotient = "none"
-        raise Exception("Divide by 0 error")
-        print("Divide by 0 error", file = sys.stderr)
+        raise ValueError("Divide by 0 error")
     finally:
         print("Inside result: {}".format(quotient))
         return(quotient)
