@@ -3,7 +3,7 @@ def safe_print_division(a, b):
     try:
         quotient = a / b
     except:
-        quotient = "none"
+        quotient = "None"
         raise ValueError("Divide by 0 error")
     finally:
         print("Inside result: {}".format(quotient))
