@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 "a class that defines a square"
 
+
 class Square:
     "defines a square with size, a getter, a setter, instantiation, and public \
 instance method"
