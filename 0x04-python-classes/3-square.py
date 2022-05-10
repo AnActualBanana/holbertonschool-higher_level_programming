@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"a class that defines a square"
+
 class Square:
+    "defines a square with size, a getter, a setter, instantiation, and public \
+instance method"
     def __init__(self, size=0):
         self.size = size
 
@@ -9,7 +13,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        if isinstance(value, int) == False:
+        if isinstance(value, int) is False:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
