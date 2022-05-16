@@ -30,6 +30,7 @@ to manipulate the rectangle"""
             if h != self.__height - 1:
                 string += "\n"
         return string
+
     @property
     def width(self):
         return self.__width
