@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""class with a public instance method that's not current implemented"""
+"""class with a public instance method that's not currently implemented"""
 
 class BaseGeometry:
     """class"""
