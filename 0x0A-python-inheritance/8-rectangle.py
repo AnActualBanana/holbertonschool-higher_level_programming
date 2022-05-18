@@ -2,6 +2,7 @@
 """A Rectangle class, that inherits from BaseGeometry, that's instantiated with\
  width and height"""
 
+
 class BaseGeometry:
     """class"""
     def area(self):
