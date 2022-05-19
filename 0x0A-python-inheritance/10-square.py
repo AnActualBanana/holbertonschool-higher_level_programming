@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""A Rectangle class, that inherits from BaseGeometry, that's instantiated with\
- width and height"""
+"""A Rectangle class, that inherits from BaseGeometry, that's instantiated\
+ with width and height"""
 
 
 class BaseGeometry:
@@ -14,6 +14,7 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
 
 class Rectangle(BaseGeometry):
     """The Rectangle class"""
@@ -34,7 +35,9 @@ class Rectangle(BaseGeometry):
     def __repr__(self):
         print("[Rectangle] {}/{}".format(self.__width, self.__height))
 
+
 class Square(Rectangle):
+    """The square class"""
     def __init__(self, size):
         self.integer_validator("size", size)
         self.__size = size
