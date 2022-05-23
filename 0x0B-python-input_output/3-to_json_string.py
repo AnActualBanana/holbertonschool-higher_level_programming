@@ -4,6 +4,7 @@
 
 import json
 
+
 def to_json_string(my_obj):
     """serializes my_obj"""
     my_obj_json = json.dumps(my_obj)
