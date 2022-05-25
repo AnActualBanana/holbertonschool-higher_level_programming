@@ -99,19 +99,21 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         arg_num = 0
         att_list = ['id', 'width', 'height', 'x', 'y']
-        for arg in args:
-            arg_num += 1
-            if arg_num == 1:
-                self.id = arg
-            elif arg_num == 2:
-                self.width = arg
-            elif arg_num == 3:
-                self.height = arg
-            elif arg_num == 4:
-                self.x = arg
-            elif arg_num == 5:
-                self.y = arg
-        for key, value in kwargs.items():
-            for att in att_list:
-                if key == att:
-                    setattr(self, key, value)
+        if args:
+            for arg in args:
+                arg_num += 1
+                if arg_num == 1:
+                    self.id = arg
+                elif arg_num == 2:
+                    self.width = arg
+                elif arg_num == 3:
+                    self.height = arg
+                elif arg_num == 4:
+                    self.x = arg
+                elif arg_num == 5:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                for att in att_list:
+                    if key == att:
+                        setattr(self, key, value)

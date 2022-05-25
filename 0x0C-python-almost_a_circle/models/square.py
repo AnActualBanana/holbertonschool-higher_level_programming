@@ -30,3 +30,21 @@ class Square(Rectangle):
         self.__width = value
         self.__height = value
         self.__size = value
+
+    def update(self, *args, **kwargs):
+        arg_num = 0
+        att_list = ['id', 'size', 'x', 'y']
+        for arg in args:
+            arg_num += 1
+            if arg_num == 1:
+                self.id = arg
+            elif arg_num == 2:
+                self.size = arg
+            elif arg_num == 3:
+                self.__x = arg
+            elif arg_num == 4:
+                self.__y = arg
+        for key, value in kwargs.items():
+            for att in att_list:
+                if key == att:
+                    setattr(self, key, value)
