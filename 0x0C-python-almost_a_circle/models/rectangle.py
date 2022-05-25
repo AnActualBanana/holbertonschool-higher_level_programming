@@ -83,7 +83,11 @@ class Rectangle(Base):
         return(self.width * self.height)
 
     def display(self):
+        for y_offset in range(0, self.__y):
+            print("")
         for lines in range(0, self.__height):
+            for x_offset in range(0, self.__x):
+                print(" ", end="")
             for hashes in range(0, self.__width):
                 print("#", end="")
             print("")
