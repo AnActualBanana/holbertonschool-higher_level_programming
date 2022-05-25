@@ -48,3 +48,6 @@ class Square(Rectangle):
             for att in att_list:
                 if key == att:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        return {'id': self.id, 'size': self.__size, 'x': self.__x, 'y': self.__y}
