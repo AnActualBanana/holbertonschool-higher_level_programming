@@ -117,3 +117,7 @@ class Rectangle(Base):
                 for att in att_list:
                     if key == att:
                         setattr(self, key, value)
+
+    def to_dictionary(self):
+        return {'id': self.id, 'width': self.__width, 'height': self.height, \
+                'x': self.__x, 'y': self.__y}
