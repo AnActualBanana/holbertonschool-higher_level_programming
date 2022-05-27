@@ -33,9 +33,11 @@ class Rectangle(Base):
 
     @property
     def width(self):
-            return self.__width
+    """getter for width"""
+        return self.__width
 
     @width.setter
+    """setter for width"""
     def width(self, value):
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -45,9 +47,11 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """getter for height"""
         return self.__height
 
     @height.setter
+    """setter for height"""
     def height(self, value):
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -57,10 +61,12 @@ class Rectangle(Base):
 
     @property
     def x(self, value):
+        """getter for x"""
         self.__x = value
 
     @x.setter
     def x(self, value):
+        """setter for x"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -69,10 +75,12 @@ class Rectangle(Base):
 
     @property
     def y(self, value):
+        """getter for y"""
         self.__y = value
 
     @y.setter
     def y(self, value):
+        """setter for y"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -80,9 +88,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """returns area of model"""
         return(self.width * self.height)
 
     def display(self):
+        """displays the shape of the object"""
         for y_offset in range(0, self.__y):
             print("")
         for lines in range(0, self.__height):
@@ -93,10 +103,12 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
+        """returns string representation of object"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, \
                 self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """updates attributes of object"""
         arg_num = 0
         att_list = ['id', 'width', 'height', 'x', 'y']
         if args:
@@ -119,5 +131,6 @@ class Rectangle(Base):
                         setattr(self, key, value)
 
     def to_dictionary(self):
+        """converts object attributes to dictionary"""
         return {'id': self.id, 'width': self.__width, 'height': self.height, \
                 'x': self.__x, 'y': self.__y}
