@@ -1,2 +1,2 @@
 -- Creates a database in the server
-CREATE DATABASE IF NOT EXISTS 'hbtn_0c_0';
+IF NOT EXISTS `hbtn_0c_0` THEN CREATE DATABASE hbtn_0c_0;
