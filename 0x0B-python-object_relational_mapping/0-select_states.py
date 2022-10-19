@@ -2,6 +2,7 @@
 """
 Script that will list all states
 """
+
 import MySQLdb
 
 
@@ -15,5 +16,5 @@ if __name__ == "__main__":
     for row in cursor.fetchall():
         print(row)
 
-        cursor.close()
-        db.close()
+    cursor.close()
+    db.close()
