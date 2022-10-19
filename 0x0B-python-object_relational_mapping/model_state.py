@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 """
-lists all states from the database hbtn_0e_0_usa
+a state class
 """
 
-import MySQLdb
+import sqlalchemy
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
-if __name__ == "__main__":
-    from sys import argv
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], database=argv[3])
+Base = declarative_base()
 
-    cursor = db.cursor()
-
-    cursor.execute("SELECT * FROM states")
-    for rows in cursor.fetchall():
-        print(rows)
-
-    cursor.close()
-    db.close()
+class State(Base):
+    """
+    The state class
+    """
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), nullable=False)
+    
