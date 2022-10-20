@@ -15,6 +15,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(db)
     sesh = sessionmaker(bind=db)
 
-    for row in dbsession().query(State.order_by(State.id):
+    for row in dbsession().query(State).order_by(State.id):
         print("{}: {}".format(row.id, row.name))
     sesh().close
