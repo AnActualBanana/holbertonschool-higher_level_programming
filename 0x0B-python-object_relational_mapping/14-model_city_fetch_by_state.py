@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-Lists all states with 'a' in their name.
+Lists all cities
 """
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from model_city import City
 
 
 if __name__ == "__main__":
@@ -15,11 +16,12 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)
+    dbs = session()
 
-    Astates = session().query(State).order_by(State.id)\
-        .filter(State.name.like("%a%"))
-
-    for row in Astates:
-        print("{}: {}".format(row.id, row.name))
+    city_search = dbs.query(State, City).filter(
+        State.id == City.state_id).all()
+    for state_item, city_item in city_search:
+        print("{}: ({}) {}".format(state_item.name,
+              city_item.id, city_item.name))
 
     session().close

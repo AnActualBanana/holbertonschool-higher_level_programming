@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all states with 'a' in their name.
+changes the name of a state by id given
 """
 from sys import argv
 from sqlalchemy import create_engine
@@ -15,11 +15,10 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)
+    dbs = session()
 
-    Astates = session().query(State).order_by(State.id)\
-        .filter(State.name.like("%a%"))
-
-    for row in Astates:
-        print("{}: {}".format(row.id, row.name))
+    upstate = dbs.query(State).filter(State.id == 2).one()
+    upstate.name = "New Mexico"
+    dbs.commit()
 
     session().close

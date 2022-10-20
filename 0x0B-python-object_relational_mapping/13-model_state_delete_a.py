@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all states with 'a' in their name.
+deletes all states containing the letter 'a'
 """
 from sys import argv
 from sqlalchemy import create_engine
@@ -15,11 +15,11 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)
+    dbs = session()
 
-    Astates = session().query(State).order_by(State.id)\
-        .filter(State.name.like("%a%"))
+    delm = dbs.query(State).filter(State.name.like('%a%'))
+    for row in delm:
+        dbs.delete(row)
+    dbs.commit()
 
-    for row in Astates:
-        print("{}: {}".format(row.id, row.name))
-
-    session().close
+    session()
