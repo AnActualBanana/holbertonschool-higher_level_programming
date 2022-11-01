@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-script that fetches https://intranet.hbtn.io/status
-"""
+"""Script that fetches status of hbtn intranet"""
 
 
 from requests import get
