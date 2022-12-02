@@ -1,0 +1,1 @@
+For project 0x01. JavaScrtipt - Objects, Scopes and Closures
