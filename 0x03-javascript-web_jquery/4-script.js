@@ -1,3 +1,4 @@
+const $ = window.$;
 $('#toggle_header').click(function () {
-    $('header').toggleClass('red').toggleClass('green');
-  });
+  $('header').toggleClass('red').toggleClass('green');
+});
